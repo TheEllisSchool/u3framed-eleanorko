@@ -7,6 +7,11 @@ public class LightButton extends JButton {
     private static final int MAXSIZE = 100;
     private int row = 0;
     private int col = 0;
+    private int centerR = 1;
+    private int centerC = 1;
+    private boolean isLit = false;
+   // private boolean isOpaque = false;
+   // private boolean isLit = false;
     
     public LightButton (int r, int c){
         row = r;
@@ -38,6 +43,7 @@ public class LightButton extends JButton {
         boolean isLit = (color == Color.RED);
         return isLit;        
     }
+
     
     
     public void toggle(){
@@ -47,4 +53,11 @@ public class LightButton extends JButton {
             turnOn();
         }
     }
+
+	public void reset() {
+		isLit = false;
+		setBackground(Color.BLACK);
+		setText("");
+		
+	}
 }
